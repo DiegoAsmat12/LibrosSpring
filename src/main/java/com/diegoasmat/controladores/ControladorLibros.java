@@ -1,5 +1,7 @@
 package com.diegoasmat.controladores;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,5 +28,10 @@ public class ControladorLibros {
 		return "libro.jsp";
 	}
 	
-	
+	@GetMapping("")
+	public String index(Model model) {
+		List<Libro> libros = servicioLibros.allBooks();
+		model.addAttribute("books", libros);
+		return "index.jsp";
+	}
 }
