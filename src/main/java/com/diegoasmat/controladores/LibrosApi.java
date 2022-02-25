@@ -47,7 +47,7 @@ public class LibrosApi {
 		
 	}
 	
-	@RequestMapping(value="/api/books/{id}")
+	@RequestMapping(value="/api/books/{id}", method = RequestMethod.DELETE)
 	public void destroy(@PathVariable("id") Long id) {
 		servicioLibros.deleteBook(id);
 	}
