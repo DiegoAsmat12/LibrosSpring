@@ -25,19 +25,19 @@ public class Libro {
 	private Long id; 
 	
 	@NotNull
-	@Size(min=5,max=200)
+	@Size(min=5,max=200, message = "El titlo debe tener al menos 5 caracteres")
 	private String title;
 	
 	@NotNull
-	@Size(min=5,max=200)
+	@Size(min=5,max=200,message = "La descripción es muy corta.")
 	private String description;
 	
 	@NotNull
-	@Size(min = 3,max = 40)
+	@Size(min = 3,max = 40, message="El lenguaje debe tener al menos 3 caracteres.")
 	private String language;
 	
 	@NotNull
-	@Min(100)
+	@Min(value=100, message="Debe tener al menos 100 páginas.")
 	private Integer numOfPages;
 	
 	//No permite cambios después de la creación
