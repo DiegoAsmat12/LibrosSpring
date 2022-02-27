@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -18,6 +17,7 @@
 					<th>Title</th>
 					<th>Language</th>
 					<th>Number of Pages</th>
+					<th>Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,6 +27,12 @@
 						<td><a href="/books/${book.getId()}"><c:out value="${book.getTitle()}"></c:out></a></td>
 						<td><c:out value="${book.getLanguage()}"></c:out></td>
 						<td><c:out value="${book.getNumOfPages()}"></c:out></td>
+						<td>
+							<form action="/books/${book.getId()}" method="post">
+							    <input type="hidden" name="_method" value="delete">
+							    <button type="submit">Delete</button>
+							</form>
+						</td>
 					</tr>
 				</c:forEach>
 			</tbody>
