@@ -49,6 +49,14 @@ public class ServicioLibros {
 		return null;
 	}
 	
+	public Libro updateLibro(Libro libro) {
+		Libro libroObtenido = findBook(libro.getId());
+		if(libroObtenido!=null) {
+			return repositorioLibros.save(libro);
+		}
+		return null;
+	}
+	
 	public void deleteBook(Long id) {
 		repositorioLibros.deleteById(id);
 	}
